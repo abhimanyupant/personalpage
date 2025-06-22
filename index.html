@@ -281,7 +281,6 @@
     <button class="scroll-top" onclick="scrollToTop()">↑</button>
 
     <script>
-        // Smooth scrolling animation for elements
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -295,20 +294,16 @@
             });
         }, observerOptions);
 
-        // Observe all fade-in elements
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Scroll to top functionality
         function scrollToTop() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         }
-
-        // Show/hide scroll to top button
         window.addEventListener('scroll', () => {
             const scrollBtn = document.querySelector('.scroll-top');
             if (window.pageYOffset > 300) {
@@ -318,7 +313,6 @@
             }
         });
 
-        // Add some interactive effects
         document.querySelectorAll('.skill-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.style.transform = 'translateY(-5px) scale(1.02)';
@@ -328,8 +322,6 @@
                 card.style.transform = 'translateY(0) scale(1)';
             });
         });
-
-        // Dynamic greeting based on time
         function updateGreeting() {
             const hour = new Date().getHours();
             const subtitle = document.querySelector('.subtitle');
@@ -343,7 +335,6 @@
             }
         }
 
-        // Initialize greeting
         updateGreeting();
     </script>
 </body>
